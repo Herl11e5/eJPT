@@ -104,7 +104,12 @@ autoroute allow us to add a route to the network.
 route add 192.69.228.0 255.255.255.0 1
 ```
 for adding manually a route on msfconsole:
+
 add //the command
+
 subnet //subnet to connect
+
 netmask //netmask of the subned
+
 sid //meterpter session id
+
