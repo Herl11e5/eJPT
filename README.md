@@ -3,8 +3,15 @@ Some helps to pass eJPT
 
 # Footprinting & Scanning
 
-## NMAP
-
+## Ping Sweep
+You can scan all network with nmap, -sn to disable port scan
+```
+root@kali:~# nmap -sn -n 10.142.111.0/24
+```
+but you can scanning entire network with fping
+```
+root@kali:~# fping -a -g 10.142.111.0/24 2> /dev/null
+```
 
 # Metasploit
 Start metasploit with
