@@ -1,6 +1,11 @@
 # eJPT
 Some helps to pass eJPT
-
+# Information Gathering
+## Subdomain Enumeration
+```
+root@kali:~# sublist3r -v -d yahoo.com -w /usr/share/wordlists/
+```
+or we can use -b to bruteforce
 # Footprinting & Scanning
 
 ## Ping Sweep
@@ -100,7 +105,7 @@ meterpreter> getpid
 meterpreter> ps -U SYSTEM //process with system privilege, choose one
 meterpreter> migrate PID
 ```
-# PIVOTING
+# Pivoting
 When we get access into a machine, we can check with ifconfig if there is another network which we couldn't access.
 So let add the route to this network in msfconsole.
 ```
