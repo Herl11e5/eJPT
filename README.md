@@ -17,6 +17,55 @@ but you can scanning entire network with fping
 ```
 root@kali:~# fping -a -g 10.142.111.0/24 2> /dev/null
 ```
+# Nmap
+## OS Fingerprinting
+```
+nmap -Pn -A -O 10.10.10.10
+```
+## Quick scan
+```
+nmap -sC -sV -A -T4 10.10.10.10 --open
+```
+## Full scan
+```
+nmap -sC -sV -A -T4 -p- 10.10.10.10 --open
+```
+
+nmap vuln scan example:
+--script-args=unsafe=1 is used if you don't want to "crash" the system.
+```
+nmap --script vuln --script-args=unsafe=1 -iL hosts.txt
+```
+# Spotting a firewall
+
+If an nmap TCP scan identified a well-known service, such as a web server, but cannot detect the version, then there may be a firewall in place.
+
+```
+For example:
+PORT    STATE  SERVICE  REASON          VERSION
+80/tcp  open   http?    syn-ack ttl 64
+```
+
+Another example:
+
+```
+80/tcp  open   tcpwrapped 
+```
+“tcpwrapped” means the TCP handshake was completed, but the remote host closed the connection without receiving any data.
+
+These are both indicators that a firewall is blocking our scan with the target!
+
+Tips:
+
+Use “–reason” to see why a port is marked open or closed
+If a “RST” packet is received, then something prevented the connection - probably a firewall!
+
+# httprint
+
+httprint banner grabling:
+```
+httprint -P0 -s /usr/share/httprint/signatures.txt -h 10.10.10.15
+```
 
 # Metasploit
 Start metasploit with
