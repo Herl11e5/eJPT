@@ -5,6 +5,10 @@ Some helps to pass eJPT
 ```
 root@kali:~# sublist3r -v -d yahoo.com -w /usr/share/wordlists/
 ```
+we can enumerate the subdomains like FUZZ.thetoppers.htb
+```
+gobuster vhost -u http://thetoppers.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+```
 or we can use -b to bruteforce
 # Footprinting & Scanning
 
