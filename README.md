@@ -179,3 +179,5 @@ netmask //netmask of the subned
 
 sid //meterpter session id
 
+#SQLI
+Intresting link with SQLI payloads: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass
